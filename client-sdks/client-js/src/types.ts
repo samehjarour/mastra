@@ -6,11 +6,11 @@ import type {
   StepAction,
   StepGraph,
   StorageThreadType,
-  BaseLogMessage,
   WorkflowRunResult as CoreWorkflowRunResult,
   VNextWorkflowRuns,
   WorkflowRuns,
 } from '@mastra/core';
+import type { BaseLogMessage } from '@mastra/core/logger';
 
 import type { AgentGenerateOptions, AgentStreamOptions } from '@mastra/core/agent';
 import type { RuntimeContext } from '@mastra/core/runtime-context';

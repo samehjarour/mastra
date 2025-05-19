@@ -2,7 +2,7 @@ import { join, resolve, isAbsolute } from 'node:path';
 import { createClient } from '@libsql/client';
 import type { Client, InValue, Config as LibSQLConfig } from '@libsql/client';
 import type { MetricResult, TestInfo } from '../../eval';
-import type { Logger } from '../../logger';
+import type { IMastraLogger } from '../../logger';
 import type { MessageType, StorageThreadType } from '../../memory/types';
 import { parseSqlIdentifier } from '../../utils';
 import type { WorkflowRunState } from '../../workflows';
@@ -20,7 +20,7 @@ function safelyParseJSON(jsonString: string): any {
 }
 
 let hasWarned = false;
-function warnDeprecation(logger: Logger) {
+function warnDeprecation(logger: IMastraLogger) {
   if (hasWarned) return;
   hasWarned = true;
 
