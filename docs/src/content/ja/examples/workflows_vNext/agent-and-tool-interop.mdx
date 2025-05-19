@@ -66,14 +66,14 @@ export { weatherWorkflow };
 
 ```ts showLineNumbers copy filename="index.ts"
 import { Mastra } from "@mastra/core/mastra";
-import { createLogger } from "@mastra/core/logger";
+import { PinoLogger } from "@mastra/loggers";
 import { weatherWorkflow } from "./workflows";
 
 const mastra = new Mastra({
   vnext_workflows: {
     weatherWorkflow,
   },
-  logger: createLogger({
+  logger: new PinoLogger({
     name: "Mastra",
     level: "info",
   }),

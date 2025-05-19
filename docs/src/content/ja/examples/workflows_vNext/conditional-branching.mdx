@@ -284,7 +284,7 @@ export { weatherWorkflow };
 
 ```ts showLineNumbers copy filename="index.ts"
 import { Mastra } from "@mastra/core/mastra";
-import { createLogger } from "@mastra/core/logger";
+import { PinoLogger } from "@mastra/loggers";
 import { weatherWorkflow } from "./workflows";
 import { planningAgent } from "./agents";
 
@@ -295,7 +295,7 @@ const mastra = new Mastra({
   agents: {
     planningAgent,
   },
-  logger: createLogger({
+  logger: new PinoLogger({
     name: "Mastra",
     level: "info",
   }),
@@ -311,7 +311,7 @@ export { mastra };
 
 ```ts showLineNumbers copy filename="index.ts"
 import { Mastra } from "@mastra/core/mastra";
-import { createLogger } from "@mastra/core/logger";
+import { PinoLogger } from "@mastra/loggers";
 import { weatherWorkflow } from "./workflows";
 import { planningAgent } from "./agents";
 

@@ -158,7 +158,7 @@ export { weatherWorkflow, humanInputStep };
 
 ```ts showLineNumbers copy filename="index.ts"
 import { Mastra } from "@mastra/core/mastra";
-import { createLogger } from "@mastra/core/logger";
+import { PinoLogger } from "@mastra/loggers";
 import { weatherWorkflow } from "./workflows";
 import { travelAgent, summaryAgent } from "./agents";
 
@@ -170,7 +170,7 @@ const mastra = new Mastra({
     travelAgent,
     summaryAgent,
   },
-  logger: createLogger({
+  logger: new PinoLogger({
     name: "Mastra",
     level: "info",
   }),
