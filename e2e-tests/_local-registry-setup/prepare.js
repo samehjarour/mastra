@@ -53,6 +53,8 @@ export async function prepareMonorepo(monorepoDir, glob) {
         cwd: monorepoDir,
       });
 
+      console.log({ packageFiles });
+
       for (const file of packageFiles) {
         const content = readFileSync(file, 'utf8');
         console.log({ content });
