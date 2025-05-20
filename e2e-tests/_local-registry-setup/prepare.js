@@ -52,6 +52,7 @@ export async function prepareMonorepo(monorepoDir, glob) {
         ignore: ['**/node_modules/**'],
       });
 
+      console.log(process.cwd());
       console.log({ packageFiles });
       for (const file of packageFiles) {
         const content = readFileSync(file, 'utf8');
