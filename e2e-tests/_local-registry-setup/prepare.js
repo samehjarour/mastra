@@ -50,6 +50,7 @@ export async function prepareMonorepo(monorepoDir, glob) {
       // Update workspace dependencies to use ^ instead of *
       const packageFiles = await glob('**/package.json', {
         ignore: ['**/node_modules/**'],
+        cwd: monorepoDir,
       });
 
       console.log(process.cwd());
