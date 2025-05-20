@@ -58,11 +58,14 @@ export async function prepareMonorepo(monorepoDir, glob) {
 
       for (const file of packageFiles) {
         const content = readFileSync(join(monorepoDir, file), 'utf8');
-        const updated = content
-          .replace(/"workspace:\^"/g, '"workspace:*"')
-          .replace(/"@mastra\/core":\s*"[^"]+"/g, '"@mastra/core": "*"');
-        console.log({ updated, file });
-        writeFileSync(join(monorepoDir, file), updated);
+        const updated = content.replace(/"workspace:\^"/g, '"workspace:*"');
+
+        const parsed = JSON.parse(content);
+        if (parsed.peerDependencies['@mastra/core']) {
+          parsed.peerDependencies['@mastra/core'] = '*';
+        }
+
+        writeFileSync(join(monorepoDir, file), JSON.stringify(parsed, null, 2));
       }
     })();
 
