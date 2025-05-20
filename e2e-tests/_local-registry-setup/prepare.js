@@ -60,7 +60,7 @@ export async function prepareMonorepo(monorepoDir, glob) {
           .replace(/"workspace:\^"/g, '"workspace:*"')
           .replace(/"@mastra\/core":\s*"[^"]+"/g, '"@mastra/core": "*"');
         console.log({ updated, file });
-        writeFileSync(file, updated);
+        // writeFileSync(file, updated);
       }
     })();
     console.log('test');
