@@ -61,6 +61,8 @@ export async function prepareMonorepo(monorepoDir, glob) {
         console.log({ updated, file });
         // writeFileSync(file, updated);
       }
+
+      console.log('hello');
     })();
     console.log('test');
     exit(0);
