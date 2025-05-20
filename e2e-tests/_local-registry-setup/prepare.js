@@ -1,5 +1,6 @@
 import { execSync } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
 
 function cleanup(monorepoDir, resetChanges = false) {
   execSync('git checkout .', {
@@ -56,7 +57,7 @@ export async function prepareMonorepo(monorepoDir, glob) {
       console.log({ packageFiles });
 
       for (const file of packageFiles) {
-        const content = readFileSync(path.join(monorepoDir, file), 'utf8');
+        const content = readFileSync(join(monorepoDir, file), 'utf8');
         const updated = content
           .replace(/"workspace:\^"/g, '"workspace:*"')
           .replace(/"@mastra\/core":\s*"[^"]+"/g, '"@mastra/core": "*"');
