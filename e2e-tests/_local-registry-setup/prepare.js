@@ -53,7 +53,6 @@ export async function prepareMonorepo(monorepoDir, glob) {
         cwd: monorepoDir,
       });
 
-      console.log(process.cwd());
       console.log({ packageFiles });
       for (const file of packageFiles) {
         const content = readFileSync(file, 'utf8');
@@ -64,6 +63,7 @@ export async function prepareMonorepo(monorepoDir, glob) {
         writeFileSync(file, updated);
       }
     })();
+    console.log('test');
     exit(0);
     execSync('pnpm changeset pre exit', {
       cwd: monorepoDir,
