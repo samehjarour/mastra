@@ -5,6 +5,8 @@ import pretty from 'pino-pretty';
 
 type TransportMap = Record<string, LoggerTransport>;
 
+export { LogLevel } from '@mastra/core/logger';
+
 export class PinoLogger extends MastraLogger {
   protected logger: pino.Logger;
 
@@ -19,6 +21,19 @@ export class PinoLogger extends MastraLogger {
     super(options);
 
     const transportsAry = [...this.getTransports().entries()];
+
+    let prettyTransport: undefined | pretty.PrettyStream = undefined;
+    if (!options.overrideDefaultTransports) {
+      prettyTransport = pretty({
+        colorize: true,
+        levelFirst: true,
+        ignore: 'pid,hostname',
+        colorizeObjects: true,
+        translateTime: 'SYS:standard',
+        singleLine: false,
+      });
+    }
+
     this.logger = pino(
       {
         name: options.name || 'app',
@@ -30,28 +45,14 @@ export class PinoLogger extends MastraLogger {
       options.overrideDefaultTransports
         ? options?.transports?.default
         : transportsAry.length === 0
-          ? pretty({
-              colorize: true,
-              levelFirst: true,
-              ignore: 'pid,hostname',
-              colorizeObjects: true,
-              translateTime: 'SYS:standard',
-              singleLine: false,
-            })
+          ? prettyTransport
           : pino.multistream([
               ...transportsAry.map(([, transport]) => ({
-                stream: transport,
+                stream: transport!,
                 level: options.level || LogLevel.INFO,
               })),
               {
-                stream: pretty({
-                  colorize: true,
-                  levelFirst: true,
-                  ignore: 'pid,hostname',
-                  colorizeObjects: true,
-                  translateTime: 'SYS:standard',
-                  singleLine: false,
-                }),
+                stream: prettyTransport!,
                 level: options.level || LogLevel.INFO,
               },
             ]),

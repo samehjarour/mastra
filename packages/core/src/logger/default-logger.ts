@@ -9,8 +9,10 @@ export const createLogger = (options: {
 }) => {
   const logger = new ConsoleLogger(options);
 
-  console.trace('???');
-  logger.warn(`createLogger is deprecated. Please use "new ConsoleLogger()" from "@mastra/core/logger" instead.`);
+  logger.warn(
+    `createLogger is deprecated. Please use "new ConsoleLogger()" from "@mastra/core/logger" instead.
+Or use "new PinoLogger()" from "@mastra/core/logger/pino-logger" instead.`,
+  );
 
   return logger;
 };
