@@ -56,13 +56,12 @@ export async function prepareMonorepo(monorepoDir, glob) {
       console.log({ packageFiles });
 
       for (const file of packageFiles) {
-        console.log({ file });
-        // const content = readFileSync(file, 'utf8');
-        // console.log({ content });
-        // const updated = content.replace(/"workspace:\^"/g, '"workspace:*"');
-        // // .replace(/"@mastra\/core":\s*"[^"]+"/g, '"@mastra/core": "*"');
-        // console.log({ updated, file });
-        // writeFileSync(file, updated);
+        const content = readFileSync(path.join(monorepoDir, file), 'utf8');
+        const updated = content
+          .replace(/"workspace:\^"/g, '"workspace:*"')
+          .replace(/"@mastra\/core":\s*"[^"]+"/g, '"@mastra/core": "*"');
+        console.log({ updated, file });
+        writeFileSync(file, updated);
       }
 
       console.log('hello');
