@@ -53,9 +53,9 @@ export async function prepareMonorepo(monorepoDir, glob) {
         cwd: monorepoDir,
       });
 
-      console.log({ packageFiles, monorepoDir });
       for (const file of packageFiles) {
         const content = readFileSync(file, 'utf8');
+        console.log({ content });
         const updated = content.replace(/"workspace:\^"/g, '"workspace:*"');
         // .replace(/"@mastra\/core":\s*"[^"]+"/g, '"@mastra/core": "*"');
         console.log({ updated, file });
