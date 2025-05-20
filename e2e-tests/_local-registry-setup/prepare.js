@@ -52,16 +52,17 @@ export async function prepareMonorepo(monorepoDir, glob) {
         ignore: ['**/node_modules/**'],
       });
 
+      console.log({ packageFiles });
       for (const file of packageFiles) {
         const content = readFileSync(file, 'utf8');
         const updated = content
           .replace(/"workspace:\^"/g, '"workspace:*"')
           .replace(/"@mastra\/core":\s*"[^"]+"/g, '"@mastra/core": "*"');
-        console.log(updated);
+        console.log({ updated });
         writeFileSync(file, updated);
       }
     })();
-
+    exit(0);
     execSync('pnpm changeset pre exit', {
       cwd: monorepoDir,
       stdio: ['inherit', 'inherit', 'inherit'],
