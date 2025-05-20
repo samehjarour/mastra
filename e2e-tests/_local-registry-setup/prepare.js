@@ -61,7 +61,7 @@ export async function prepareMonorepo(monorepoDir, glob) {
         const updated = content.replace(/"workspace:\^"/g, '"workspace:*"');
 
         const parsed = JSON.parse(content);
-        if (parsed.peerDependencies['@mastra/core']) {
+        if (parsed?.peerDependencies?.['@mastra/core']) {
           parsed.peerDependencies['@mastra/core'] = '*';
         }
 
