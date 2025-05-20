@@ -1,5 +1,22 @@
 # @mastra/deployer
 
+## 0.4.0-alpha.1
+
+### Minor Changes
+
+- 83da932: Move @mastra/core to peerdeps
+
+### Patch Changes
+
+- 1e9fbfa: Upgrade to OpenTelemetry JS SDK 2.x
+- Updated dependencies [344f453]
+- Updated dependencies [0215b0b]
+- Updated dependencies [95911be]
+- Updated dependencies [83da932]
+- Updated dependencies [1e9fbfa]
+  - @mastra/core@0.9.5-alpha.1
+  - @mastra/server@2.1.0-alpha.1
+
 ## 0.3.5-alpha.0
 
 ### Patch Changes

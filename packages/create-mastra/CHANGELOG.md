@@ -1,5 +1,17 @@
 # create-mastra
 
+## 0.3.4-alpha.1
+
+### Patch Changes
+
+- f2d3352: fix overflow scroll in runtime context
+- 95911be: Fixed an issue where if @mastra/core was not released at the same time as create-mastra, create-mastra would match the alpha tag instead of latest tag when running npm create mastra@latest
+- fd69cc3: revamp UI of workflow "Run" pane
+- cbf153f: Handle broken images on the playground
+- 0cae9b1: sidebar adjustments (storing status + showing the action of collapsing / expanding)
+- d2b595a: a better tools playground page
+- 8a68886: revamp the UI of the workflow form input
+
 ## 0.3.4-alpha.0
 
 ### Patch Changes

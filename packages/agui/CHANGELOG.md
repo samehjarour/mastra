@@ -1,5 +1,18 @@
 # @mastra/agui
 
+## 1.0.0-alpha.3
+
+### Patch Changes
+
+- Updated dependencies [344f453]
+- Updated dependencies [0215b0b]
+- Updated dependencies [95911be]
+- Updated dependencies [83da932]
+- Updated dependencies [1e9fbfa]
+- Updated dependencies [5063646]
+  - @mastra/core@0.9.5-alpha.1
+  - @mastra/client-js@0.2.0-alpha.1
+
 ## 0.0.1-alpha.2
 
 ### Patch Changes

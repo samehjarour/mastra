@@ -1,5 +1,20 @@
 # @mastra/mcp-docs-server
 
+## 0.1.0-alpha.1
+
+### Minor Changes
+
+- 83da932: Move @mastra/core to peerdeps
+
+### Patch Changes
+
+- Updated dependencies [344f453]
+- Updated dependencies [95911be]
+- Updated dependencies [83da932]
+- Updated dependencies [1e9fbfa]
+  - @mastra/core@0.9.5-alpha.1
+  - @mastra/mcp@0.6.0-alpha.1
+
 ## 0.0.15-alpha.0
 
 ### Patch Changes

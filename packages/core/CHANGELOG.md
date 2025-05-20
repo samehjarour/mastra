@@ -1,5 +1,13 @@
 # @mastra/core
 
+## 0.9.5-alpha.1
+
+### Patch Changes
+
+- 344f453: Await onFinish & onStepFinish to ensure the stream doesn't close early
+- 95911be: Fixed an issue where if @mastra/core was not released at the same time as create-mastra, create-mastra would match the alpha tag instead of latest tag when running npm create mastra@latest
+- 1e9fbfa: Upgrade to OpenTelemetry JS SDK 2.x
+
 ## 0.9.5-alpha.0
 
 ### Patch Changes

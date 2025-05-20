@@ -1,5 +1,26 @@
 # @mastra/playground-ui
 
+## 5.1.0-alpha.1
+
+### Minor Changes
+
+- 83da932: Move @mastra/core to peerdeps
+
+### Patch Changes
+
+- fd69cc3: revamp UI of workflow "Run" pane
+- cbf153f: Handle broken images on the playground
+- 0cae9b1: sidebar adjustments (storing status + showing the action of collapsing / expanding)
+- 8a68886: revamp the UI of the workflow form input
+- Updated dependencies [344f453]
+- Updated dependencies [0215b0b]
+- Updated dependencies [95911be]
+- Updated dependencies [83da932]
+- Updated dependencies [1e9fbfa]
+- Updated dependencies [5063646]
+  - @mastra/core@0.9.5-alpha.1
+  - @mastra/client-js@0.2.0-alpha.1
+
 ## 5.0.5-alpha.0
 
 ### Patch Changes

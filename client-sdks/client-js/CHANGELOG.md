@@ -1,5 +1,20 @@
 # @mastra/client-js
 
+## 0.2.0-alpha.1
+
+### Minor Changes
+
+- 83da932: Move @mastra/core to peerdeps
+
+### Patch Changes
+
+- 0215b0b: Add description to vnext workflow response
+- 5063646: Accept plain obects as runtimeContext
+- Updated dependencies [344f453]
+- Updated dependencies [95911be]
+- Updated dependencies [1e9fbfa]
+  - @mastra/core@0.9.5-alpha.1
+
 ## 0.1.23-alpha.0
 
 ### Patch Changes
