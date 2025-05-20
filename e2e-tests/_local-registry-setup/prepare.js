@@ -50,7 +50,7 @@ export async function prepareMonorepo(monorepoDir, glob) {
     await (async function updateWorkspaceDependencies() {
       // Update workspace dependencies to use ^ instead of *
       const packageFiles = await glob('**/package.json', {
-        ignore: ['**/node_modules/**'],
+        ignore: ['**/node_modules/**', '**/examples/**'],
         cwd: monorepoDir,
       });
 
@@ -64,11 +64,8 @@ export async function prepareMonorepo(monorepoDir, glob) {
         console.log({ updated, file });
         writeFileSync(join(monorepoDir, file), updated);
       }
-
-      console.log('hello');
     })();
-    console.log('test');
-    exit(0);
+
     execSync('pnpm changeset pre exit', {
       cwd: monorepoDir,
       stdio: ['inherit', 'inherit', 'inherit'],
